@@ -1,5 +1,5 @@
 # ── Build stage ──────────────────────────────────────────────────────────────
-FROM node:22-slim AS build
+FROM node:22-slim@sha256:80fdb3f57c815e1b638d221f30a826823467c4a56c8f6a8d7aa091cd9b1675ea AS build
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ COPY server/ server/
 RUN npm run build
 
 # ── Run stage ────────────────────────────────────────────────────────────────
-FROM node:22-slim AS run
+FROM node:22-slim@sha256:80fdb3f57c815e1b638d221f30a826823467c4a56c8f6a8d7aa091cd9b1675ea AS run
 
 WORKDIR /app
 
